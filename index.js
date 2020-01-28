@@ -58,7 +58,7 @@ var app = new Vue({
   // http://vuejs.org/guide/computed.html
   computed: {
     filteredTodos: function () {
-      return filters[this.visibility](this.todos)
+      return filters[this.visibility](this.todos).slice().reverse()
     },
     remaining: function () {
       return filters.active(this.todos).length
